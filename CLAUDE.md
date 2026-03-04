@@ -13,28 +13,22 @@ ledroit-marketplace/
 │       ├── .claude-plugin/
 │       │   └── plugin.json
 │       ├── .mcp.json                 # Config du serveur MCP Legifrance
-│       └── skills/
-│           ├── legifrance/           # /legifrance — skill principale
-│           │   ├── SKILL.md
-│           │   └── references/
-│           │       ├── tools-and-codes.md
-│           │       ├── search-parameters.md
-│           │       ├── veille-juridique.md
-│           │       └── advanced-patterns.md
-│           ├── article/              # /article — article de code
-│           │   └── SKILL.md
-│           ├── loi/                  # /loi — recherche de loi
-│           │   └── SKILL.md
-│           ├── jurisprudence/        # /jurisprudence — decisions de justice
-│           │   └── SKILL.md
-│           ├── convention/           # /convention — conventions collectives
-│           │   └── SKILL.md
-│           ├── veille/               # /veille — veille juridique
-│           │   └── SKILL.md
-│           ├── jo/                   # /jo — Journal Officiel
-│           │   └── SKILL.md
-│           └── verifier/             # /verifier — verification de reference
-│               └── SKILL.md
+│       ├── skills/
+│       │   └── legifrance/           # Skill auto-invoquee (contexte droit francais)
+│       │       ├── SKILL.md
+│       │       └── references/
+│       │           ├── tools-and-codes.md
+│       │           ├── search-parameters.md
+│       │           ├── veille-juridique.md
+│       │           └── advanced-patterns.md
+│       └── commands/                 # Commandes slash /nom
+│           ├── article.md
+│           ├── loi.md
+│           ├── jurisprudence.md
+│           ├── convention.md
+│           ├── veille.md
+│           ├── jo.md
+│           └── verifier.md
 ├── CLAUDE.md                     # Ce fichier
 └── README.md
 ```
@@ -42,7 +36,8 @@ ledroit-marketplace/
 ## Conventions
 
 - Chaque plugin est un dossier dans `plugins/` avec sa propre structure `.claude-plugin/`
-- Les skills sont definies dans `plugins/<plugin>/skills/<skill>/SKILL.md`
+- Les skills sont dans `plugins/<plugin>/skills/<skill>/SKILL.md` (auto-invoquees par Claude)
+- Les commandes slash sont dans `plugins/<plugin>/commands/<command>.md` (fichiers plats)
 - La marketplace est enregistree dans `.claude-plugin/marketplace.json`
 - Langue principale : francais
 

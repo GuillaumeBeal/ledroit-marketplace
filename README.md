@@ -4,11 +4,18 @@ Marketplace de skills en droit francais pour Claude Code.
 
 Ce projet regroupe des plugins et competences permettant a Claude Code d'assister efficacement sur des problematiques de droit francais, en s'appuyant sur les sources officielles via l'API Legifrance.
 
-## Skills disponibles
+## Skills et commandes disponibles
+
+### Skill (auto-invoquee par Claude)
+
+| Skill | Description |
+|-------|-------------|
+| `legifrance` | Invoquee automatiquement pour toute question de droit francais — articles, lois, decrets, jurisprudence, conventions collectives, veille |
+
+### Commandes slash
 
 | Commande | Description |
 |----------|-------------|
-| `/legifrance` | Skill principale — recherche et consultation generaliste du droit francais |
 | `/article` | Consulter un article de code (`/article L225-1 code de commerce`) |
 | `/loi` | Trouver une loi par nom courant ou numero (`/loi Sapin 2`) |
 | `/jurisprudence` | Rechercher des decisions de justice (`/jurisprudence responsabilite 2024`) |
@@ -16,8 +23,6 @@ Ce projet regroupe des plugins et competences permettant a Claude Code d'assiste
 | `/veille` | Veille juridique par domaine et periode (`/veille droit du travail 3 mois`) |
 | `/jo` | Derniers textes du Journal Officiel (`/jo`) |
 | `/verifier` | Verifier une citation juridique (`/verifier art. 1382 code civil`) |
-
-Toutes les skills fonctionnent avec le MCP Legifrance : elles guident les workflows de recherche, le MCP fournit l'acces aux donnees officielles.
 
 ## MCP Servers
 
@@ -61,15 +66,18 @@ ledroit-marketplace/
 │   └── legifrance-plugin/      # Plugin Legifrance (droit francais)
 │       ├── .claude-plugin/plugin.json
 │       ├── .mcp.json               # Serveur MCP Legifrance (streamable-http)
-│       └── skills/
-│           ├── legifrance/     # /legifrance (skill principale + references)
-│           ├── article/        # /article
-│           ├── loi/            # /loi
-│           ├── jurisprudence/  # /jurisprudence
-│           ├── convention/     # /convention
-│           ├── veille/         # /veille
-│           ├── jo/             # /jo
-│           └── verifier/       # /verifier
+│       ├── skills/
+│       │   └── legifrance/         # Skill auto-invoquee
+│       │       ├── SKILL.md
+│       │       └── references/
+│       └── commands/               # Commandes slash (/article, /loi, etc.)
+│           ├── article.md
+│           ├── loi.md
+│           ├── jurisprudence.md
+│           ├── convention.md
+│           ├── veille.md
+│           ├── jo.md
+│           └── verifier.md
 ├── CLAUDE.md                   # Instructions pour Claude Code
 └── README.md                   # Ce fichier
 ```
@@ -93,11 +101,11 @@ Le plugin inclut un fichier `.mcp.json` pret a l'emploi. Pour l'activer dans un 
 
 ## Contribuer
 
-Pour ajouter une nouvelle skill :
+Pour ajouter une nouvelle command :
 
 1. Creer un dossier dans `plugins/<nom-plugin>/`
 2. Ajouter un `plugin.json` dans `.claude-plugin/`
-3. Creer la skill dans `skills/<nom-skill>/SKILL.md`
+3. Creer la command dans `commands/<nom-command>.md`
 4. Enregistrer le plugin dans `.claude-plugin/marketplace.json`
 
 ## Licence
