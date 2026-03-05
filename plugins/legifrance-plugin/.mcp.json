@@ -2,7 +2,7 @@
   "mcpServers": {
     "legifrance": {
       "type": "streamable-http",
-      "url": "https://legifrance.stellarspace.tech/mcp"
+      "url": "https://legifrance.topinambour.space/mcp"
     }
   }
 }
