@@ -9,26 +9,37 @@ jean-claude-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Configuration principale de la marketplace
 ├── plugins/
-│   └── legifrance-plugin/        # Plugin Legifrance (droit francais)
+│   ├── legifrance-plugin/        # Plugin Legifrance (droit francais)
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   ├── .mcp.json                 # Config du serveur MCP Legifrance
+│   │   ├── skills/
+│   │   │   └── legifrance/           # Skill auto-invoquee (contexte droit francais)
+│   │   │       ├── SKILL.md
+│   │   │       └── references/
+│   │   │           ├── tools-and-codes.md
+│   │   │           ├── search-parameters.md
+│   │   │           ├── veille-juridique.md
+│   │   │           └── advanced-patterns.md
+│   │   └── commands/                 # Commandes slash /nom
+│   │       ├── article.md
+│   │       ├── loi.md
+│   │       ├── jurisprudence.md
+│   │       ├── convention.md
+│   │       ├── veille.md
+│   │       ├── jo.md
+│   │       └── verifier.md
+│   └── droit-des-affaires-plugin/  # Plugin Droit des affaires
 │       ├── .claude-plugin/
 │       │   └── plugin.json
-│       ├── .mcp.json                 # Config du serveur MCP Legifrance
-│       ├── skills/
-│       │   └── legifrance/           # Skill auto-invoquee (contexte droit francais)
-│       │       ├── SKILL.md
-│       │       └── references/
-│       │           ├── tools-and-codes.md
-│       │           ├── search-parameters.md
-│       │           ├── veille-juridique.md
-│       │           └── advanced-patterns.md
-│       └── commands/                 # Commandes slash /nom
-│           ├── article.md
-│           ├── loi.md
-│           ├── jurisprudence.md
-│           ├── convention.md
-│           ├── veille.md
-│           ├── jo.md
-│           └── verifier.md
+│       └── skills/
+│           └── due-diligence/        # Skill due diligence M&A
+│               ├── SKILL.md
+│               └── references/
+│                   ├── corporate.md, fiscal.md, social.md, financement.md
+│                   ├── contrats.md, ip.md, reglementaire.md, rgpd.md
+│                   ├── document-request-list.md, report-templates.md
+│                   └── legifrance-integration.md
 ├── CLAUDE.md                     # Ce fichier
 └── README.md
 ```

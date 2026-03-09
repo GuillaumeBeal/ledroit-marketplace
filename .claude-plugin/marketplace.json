@@ -16,6 +16,11 @@
       "name": "vpsoft-plugin",
       "source": "./plugins/vpsoft-plugin",
       "description": "Outils et skills pour explorer et comprendre une application VPSoft via le serveur MCP. Exploration du modele de donnees, code dynamique, audit et diagnostic."
+    },
+    {
+      "name": "droit-des-affaires-plugin",
+      "source": "./plugins/droit-des-affaires-plugin",
+      "description": "Skills pour le droit des affaires français : due diligence M&A, audit juridique, fusions-acquisitions, analyse corporate, fiscal, social, IP, contrats et conformité."
     }
   ]
 }
