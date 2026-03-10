@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p /Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/plugins/droit-des-affaires-plugin/.claude-plugin)",
-      "Bash(mkdir -p /Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/plugins/droit-des-affaires-plugin/skills)"
+      "Bash(mkdir -p /Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/plugins/droit-des-affaires-plugin/skills)",
+      "Bash(grep -r droit-des-affaires /Users/guillaumeb/Documents/GitHub/jean-claude-marketplace --include=*.md --include=*.json)",
+      "Bash(xargs ls:*)",
+      "Read(//Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/**)",
+      "Bash(ls -d /Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/plugins/*/)"
     ],
     "additionalDirectories": [
       "/Users/guillaumeb/Documents/GitHub/jean-claude-marketplace/plugins/legifrance-plugin/skills/due-diligence"
